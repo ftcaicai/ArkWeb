@@ -1,7 +1,7 @@
 <div class="ui pointing menu">
-  <a class="item<% if (active == 1){%> active<% }%>" href="/mail">邮件工具 </a>
-  <a class="item<% if (active == 2){%> active<% }%>" href="/index">充值记录 </a>
-  <a class="item<% if (active == 3){%> active<% }%>" href="/users">玩家查询 </a>
+  <a class="item<% if (active == 1){%> active<% }%>" href="/mail"><i class="icon yellow mail"></i>邮件工具</a>
+  <a class="item<% if (active == 2){%> active<% }%>" href="/index"><i class="icon green diamond"></i>充值记录 </a>
+  <a class="item<% if (active == 3){%> active<% }%>" href="/users"><i class="icon red users"></i>玩家查询 </a>
 
   <div class="right menu">
     <div class="item">
@@ -20,9 +20,13 @@
       </div>
     </div>
 
+      <div class="item">
+          <a class="ui button pointing icon"><i class="mail icon"></i></a>
+      </div>
+
     <div class="item">
       <div class="ui combo pointing dropdown icon button">
-        <i class="user icon"></i>
+        <i class="user red icon"></i>
         <div class="menu">
           <div class="item"><i class="edit icon"></i> Edit</div>
           <div class="item"><i class="delete icon"></i> Delete</div>

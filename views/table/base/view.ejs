@@ -5,7 +5,12 @@
                 <% if (kv.class != null){ %>
                     class="<%= kv.class %>"
                 <%}%>
-        ><%= kv.text %>
+        >
+            <% if (kv.headtag){ %>
+                <%- kv.headtag %>
+            <%}%>
+
+            <%= kv.text %>
         </th>
     <%})%>
 </tr>
@@ -20,11 +25,18 @@
                 <% if (kv.class != null){ %>
                 class="<%= kv.class %>"
                 <%}%>
-        ><%= e[kv.dbkey] %></td>
+        >
+            <% if (kv.type && kv.type == "time") {%>
+                <%= e[kv.dbkey].toLocaleString() %>
+            <%}else{%>
+                <%= e[kv.dbkey] %>
+            <%}%>
+        </td>
 
     <%})%>
 </tr>
 <% }) %>
+
 <%} else {%>
 <tr>
     <td colspan="<%=table.kv.length%>">
@@ -36,6 +48,25 @@
 <%}%>
 </tbody>
 <tfoot>
+
+<% if(locals.t){%>
+
+<tr >
+    <% table.kv.forEach(function(kv){ %>
+    <th class="no-sort">
+        <% if(kv.filter) {%>
+        <div class="ui label">
+            $=西瓜
+            <i class="delete icon"></i>
+        </div>
+        <%}else{%>
+        &nbsp;
+        <%}%>
+    </th>
+    <% }) %>
+</tr>
+<%}%>
+
 <tr>
 <th colspan="<%=table.kv.length%>">
     <%- include("footer")%>

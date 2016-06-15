@@ -1,3 +1,19 @@
-<table class="ui left aligned celled table">
+<div class="ui item icon">
+    <div class="ui right action left icon input">
+        <i class="search icon"></i>
+        <input placeholder="Search" type="text">
+        <div class="ui basic floating dropdown button">
+            <div class="text">角色名</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <div class="item">角色名</div>
+                <div class="item">等级</div>
+            </div>
+        </div>
+        <div  id="viewSearch" type="submit" class="ui button">Search</div>
+    </div>
+</div>
+<div class="ui divider"></div>
+<table class="ui left aligned selectable striped small celled sortable table">
     <%- include("base/view")%>
 </table>
