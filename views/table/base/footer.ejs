@@ -1,0 +1,74 @@
+<% if (locals.foot ){
+    if (foot.count > 1){
+%>
+<div class="ui right floated pagination menu">
+    <a class="icon item"
+            <%
+            if (foot.page>1 && foot.count >1) {  %>
+       href="<%=foot.url%><%= (foot.page - 1) %>"
+            <%}%>
+    >
+        <i class="left chevron icon"></i>
+    </a>
+    <%
+    var showCount = 4; var outStart = foot.page > showCount ; var outEnd = outStart ? (foot.page + showCount) < foot.count: foot.page < foot.count;
+    var dataCount = Math.min(showCount, foot.count);
+    if (dataCount < showCount) {
+        outEnd = outStart = false;
+    }
+    var offset = outEnd ? (outStart? (foot.page - 1):0): foot.count - showCount;
+    for(var i = 1; i <= dataCount; i++) {
+    if (i == 1) {
+    if (outStart) {
+    %><a class="item" href="<%=foot.url%>1">...</a><%
+    if (i + offset == foot.page) { %>
+    <a class="item active" href="<%=foot.url%><%=i+ offset%>"><%= i+ offset %></a>
+    <%}else{ %>
+    <a class="item" href="<%=foot.url%><%=i+ offset%>"><%= i+ offset %></a>
+    <%}
+    }
+    else {
+    if (i + offset == foot.page) { %>
+    <a class="item active" href="<%=foot.url%><%=i+ offset%>"><%= i+ offset %></a>
+    <%}else{ %>
+    <a class="item" href="<%=foot.url%><%=i+ offset%>"><%= i+ offset %></a>
+    <%}
+    }
+    }
+    else if (i == dataCount) {
+    if (outEnd) {
+    if (i + offset == foot.page) { %>
+    <a class="item active" href="<%=foot.url%><%=i+ offset%>"><%= i+ offset %></a>
+    <%}else{ %>
+    <a class="item" href="<%=foot.url%><%=i+ offset%>"><%= i+ offset %></a>
+    <%}
+    %><a class="item" href="<%=foot.url%><%=foot.count%>">...</a><%
+    }
+    else {
+    if (i + offset== foot.page) { %>
+    <a class="item active" href="<%=foot.url%><%=i+ offset%>"><%= i+ offset %></a>
+    <%}else{ %>
+    <a class="item" href="<%=foot.url%><%=i+ offset%>"><%= i + offset%></a>
+    <%}
+    }
+    }
+    else {
+    if (i+ offset == foot.page) { %>
+    <a class="item active" href="<%=foot.url%><%=i + offset%>"><%= i+ offset %></a>
+    <%}else{ %>
+    <a class="item" href="<%=foot.url%><%=i+ offset%>"><%= i+ offset %></a>
+    <%}
+    }
+    }%>
+
+    <a class="icon item"
+            <% if (foot.page < foot.count && foot.count >1) {  %>
+       href="<%=foot.url%><%= (foot.page + 1) %>"
+            <%}%>
+    >
+        <i class="right chevron icon"></i>
+    </a>
+</div>
+<%}  } else {%>
+&nbsp;
+<%}%>

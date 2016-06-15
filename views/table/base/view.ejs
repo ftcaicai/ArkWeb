@@ -1,0 +1,44 @@
+<thead>
+<tr>
+    <% table.kv.forEach(function (kv) { %>
+        <th
+                <% if (kv.class != null){ %>
+                    class="<%= kv.class %>"
+                <%}%>
+        ><%= kv.text %>
+        </th>
+    <%})%>
+</tr>
+</thead>
+<tbody>
+<% if  (locals.t) {%>
+<%  t.forEach(function(e){ %>
+<tr>
+    <% table.kv.forEach(function (kv) { %>
+
+        <td
+                <% if (kv.class != null){ %>
+                class="<%= kv.class %>"
+                <%}%>
+        ><%= e[kv.dbkey] %></td>
+
+    <%})%>
+</tr>
+<% }) %>
+<%} else {%>
+<tr>
+    <td colspan="<%=table.kv.length%>">
+        <div class="ui message">
+            <div class="header">查无数据</div>
+        </div>
+    </td>
+</tr>
+<%}%>
+</tbody>
+<tfoot>
+<tr>
+<th colspan="<%=table.kv.length%>">
+    <%- include("footer")%>
+</th>
+</tr>
+</tfoot>

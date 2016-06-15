@@ -1,0 +1,12 @@
+<html>
+<head>
+ <title><%= title %></title>
+ <%- include("base/header") %>
+</head>
+<body>
+<%- include("nav", {active:nav}) %>
+<div class="ui segment">
+ <%- include(dataTable) %>
+</div>
+</body>
+</html>

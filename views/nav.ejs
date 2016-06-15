@@ -1,0 +1,35 @@
+<div class="ui pointing menu">
+  <a class="item<% if (active == 1){%> active<% }%>" href="/mail">邮件工具 </a>
+  <a class="item<% if (active == 2){%> active<% }%>" href="/index">充值记录 </a>
+  <a class="item<% if (active == 3){%> active<% }%>" href="/users">玩家查询 </a>
+
+  <div class="right menu">
+    <div class="item">
+      <div class="ui action left icon input">
+        <i class="search icon"></i>
+        <input placeholder="Search..." data-content="查询用户" type="text">
+        <div id="gSelect" class="ui teal button">Search</div>
+      </div>
+      <div class="ui gSelect modal">
+        <div class="header">Header</div>
+        <div class="content">
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui combo pointing dropdown icon button">
+        <i class="user icon"></i>
+        <div class="menu">
+          <div class="item"><i class="edit icon"></i> Edit</div>
+          <div class="item"><i class="delete icon"></i> Delete</div>
+          <div class="item"><i class="hide icon"></i> Hide</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
