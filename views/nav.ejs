@@ -4,11 +4,22 @@
   <a class="item<% if (active == 3){%> active<% }%>" href="/users"><i class="icon red users"></i>玩家查询 </a>
 
   <div class="right menu">
+      <div class="item">
+          <div class="ui search category">
+              <div class="ui left icon input">
+                  <input autocomplete="off" class="prompt" placeholder="Search GitHub" type="text">
+                  <i class="github icon"></i>
+              </div>
+              <div class="results"></div>
+
+          </div>
+      </div>
     <div class="item">
-      <div class="ui action left icon input">
+      <div class="ui search action left icon input">
         <i class="search icon"></i>
         <input placeholder="Search..." data-content="查询用户" type="text">
         <div id="gSelect" class="ui teal button">Search</div>
+          <div class="result"></div>
       </div>
       <div class="ui gSelect modal">
         <div class="header">Header</div>
@@ -19,10 +30,6 @@
         </div>
       </div>
     </div>
-
-      <div class="item">
-          <a class="ui button pointing icon"><i class="mail icon"></i></a>
-      </div>
 
     <div class="item">
       <div class="ui combo pointing dropdown icon button">
